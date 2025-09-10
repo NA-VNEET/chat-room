@@ -2,11 +2,12 @@ package com.example.chatApp.Entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "rooms")
+@Document(collection = "ChatRoom")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class Room {
     @Id
     private String id;
     private String roomId;
-    private final List<Message> messages = new ArrayList<>();
+    private List<Message> messages = new ArrayList<>();
 
     
 }
